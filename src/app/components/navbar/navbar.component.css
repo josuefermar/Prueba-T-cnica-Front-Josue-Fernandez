@@ -1,0 +1,11 @@
+.bg-custom-2 {
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+
+.navbar-brand{
+    margin-left: 1%;
+}
+
+.navbar-toggler{
+    margin-right: 1%;
+}

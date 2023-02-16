@@ -1,0 +1,7 @@
+<div class="container main-container col">
+    <div class="home-title"><h3>Buscador Usuarios Git</h3></div>
+    <app-form class="text-center app-form" (messageEvent)="receiveMessage($event)"
+        [users]="users"></app-form>
+    <app-chart-score [users]="users"></app-chart-score>
+    <app-user-list class="text-center" [users]="users"></app-user-list>
+</div>

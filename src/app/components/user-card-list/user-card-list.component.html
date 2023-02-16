@@ -1,0 +1,17 @@
+<div class="card" (click)="goToUser(user.login)">
+    <div class="row no-gutters">
+        <div class="col-sm-5">
+            <img class="card-img" src="{{user.avatar_url}}" alt="Suresh Dasari Card">
+        </div>
+        <div class="col-sm-7">
+            <div class="card-body">
+                <h5 class="card-title">{{user.login}}</h5>
+                <p class="card-text">
+                    <b>ID: </b>{{user.id}}<br>
+                    <b>Score: </b>{{user.score}}
+                </p>
+                <a href="user/{{user.login}}">Ver perfil</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+.form-input-box label,
+.form-input-box input {
+    font: 16px/16px Verdana;
+    padding: 0;
+}
+
+.form-input-box {
+    display: block;
+    width: 50%;
+    border: 2px solid silver;
+    padding: 8px 10px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.form-input-box input {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.form-input-box label {
+    color: silver;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transition: .25s;
+}
+
+.form-input-box.focus {
+    border-color: #1a73e8;
+}
+
+.form-input-box label.focus {
+    color: #1a73e8;
+}
+
+.form-input-box label.top {
+    left: 2px;
+    top: -10px;
+    font-size: 12px;
+    background-color: white;
+    padding: 0 5px;
+}
+
+.button-submit {
+    margin-top: 1%;
+}
+
+.form-group {
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+p.alert.alert-danger {
+    text-align: left;
+    padding: 0 0 0 15px;
+    background-color: transparent;
+    border-color: white;
+    color: #ff4040;
+    font-size: 13px;
+    width: 55%;
+}
+
+.form-input-box.error {
+    border-color: #ff4040;
+}
+
+.form-input-box label.error {
+    color: #ff4040;
+}
+
+.div-search {
+    display: flex;
+    display: flex;
+    place-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    p.alert.alert-danger{
+        width: 75%;
+    }
+}

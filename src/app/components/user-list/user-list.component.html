@@ -1,0 +1,5 @@
+<div class="users-list" *ngIf="users.length > 0">
+    <div class="card-list" *ngFor="let user of users.slice(0, 10)">
+        <app-user-card-list [user]="user"></app-user-card-list>
+    </div>
+</div>

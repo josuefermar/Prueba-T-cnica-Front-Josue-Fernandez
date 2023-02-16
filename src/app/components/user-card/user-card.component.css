@@ -1,0 +1,82 @@
+.main-container {
+    margin-top: 1%;
+}
+
+.card-img {
+    border-radius: 50%;
+    width: 63%;
+    margin-top: 6%;
+    margin-bottom: 2%;
+}
+
+.card {
+    width: 100%;
+}
+
+.col-image {
+    text-align: center;
+}
+
+.div-id {
+    color: silver;
+}
+
+.col-repo {
+    text-decoration: none;
+    color: black;
+    margin-top: 2%;
+}
+
+.col-repo .card {
+    width: 95%;
+    cursor: pointer;
+    height: 100%;
+}
+
+.col-repo .card .card-title {
+    font-size: 16px;
+}
+
+.col-repo .card a {
+    font-size: 12px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.container-languages {
+    margin-top: 5%;
+}
+
+.subcontainer-languages {
+    padding-top: 2%;
+}
+
+.card-language {
+    width: 7vw;
+    margin-top: 1%;
+}
+
+.card-language .card-body {
+    padding: 15%;
+    text-align: center;
+}
+
+.card-language .card-body .card-title {
+    font-size: 12px;
+    margin: 0;
+}
+
+.container-links {
+    margin-top: 5%;
+}
+
+.container-links .link {
+    width: 6vw;
+    margin-top: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-language {
+        width: 25vw;
+    }
+}

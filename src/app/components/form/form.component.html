@@ -1,0 +1,28 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <div class="div-search">
+            <div [ngClass]="{focus : inputFocus, error : checkoutForm.controls['userName'].hasError('required') && checkoutForm.controls['userName'].dirty}"
+                class="form-input-box">
+                <label
+                    [ngClass]="{focus : inputFocus, top : inputFocus , error : checkoutForm.controls['userName'].hasError('required') && checkoutForm.controls['userName'].dirty}"
+                    for="userName">usuario</label>
+                <input id="userName" type="text" formControlName="userName" autocomplete="off"
+                    (focus)="focusInputFunction(true)" (focusout)="focusInputFunction(false)">
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-primary button-submit" type="submit">Buscar</button>
+            </div>
+        </div>
+        <p class="alert alert-danger" *ngIf="checkoutForm.controls['userName'].hasError('minlength')">
+            El campo debe tener al menos 4 caracteres
+        </p>
+        <p class="alert alert-danger"
+            *ngIf="checkoutForm.controls['userName'].hasError('required') && checkoutForm.controls['userName'].dirty">
+            Este campo es obligatorio
+        </p>
+        <p class="alert alert-danger" *ngIf="checkoutForm.controls['userName'].hasError('pattern')">
+            No se puede realizar la busqueda de "doublevpartners"
+        </p>
+    </div>
+</form>
