@@ -22,13 +22,14 @@ export class FormComponent {
   constructor(
     private userService: UserObservablesService,
     private formBuilder: FormBuilder,
-  ){}
+  ) { }
 
-  onSubmit(): void{
-    if(this.checkoutForm.valid){
+  onSubmit(): void {
+    if (this.checkoutForm.valid) {
       let userName = String(this.checkoutForm.value.userName)
+
       this.userService.searchUser(userName).subscribe((data: GitUser) => {
-        if(data.items.length == 0){
+        if (data.items.length == 0) {
           Swal.fire({
             text: "No se encontraron usuarios con el nombre suministrado.",
             icon: 'warning',
@@ -37,11 +38,6 @@ export class FormComponent {
         }
         this.users = data.items
         this.sendMessage()
-      }, error => {
-        Swal.fire({
-          text: "Hubo un error al tratar de buscar, por favor intentalo mas tarde.",
-          icon: 'error',
-        })
       })
       this.checkoutForm.reset()
     }
@@ -51,7 +47,7 @@ export class FormComponent {
     this.messageEvent.emit(this.users)
   }
 
-  focusInputFunction(newValue: boolean){
+  focusInputFunction(newValue: boolean) {
     this.inputFocus = newValue;
   }
 }

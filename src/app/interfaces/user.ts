@@ -1,6 +1,6 @@
 import { GitRepo } from "./git-repo";
 
-export interface User{
+export interface User {
     login: string,
     id: number,
     avatar_url: string,
@@ -28,7 +28,7 @@ export interface User{
     twitter_username?: string,
     public_repos?: number,
     public_gists?: number,
-    followers?: number,
+    followers: number,
     following?: number,
     repos?: GitRepo[],
     score: number

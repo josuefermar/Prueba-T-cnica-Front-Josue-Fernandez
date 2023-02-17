@@ -1,4 +1,4 @@
-export interface GitRepo{
+export interface GitRepo {
     id: string,
     name: string,
     full_name: string,

@@ -16,14 +16,16 @@ export class UserCardListComponent {
     followers_url: '',
     repos_url: '',
     score: 0,
-    languages: []
+    languages: [],
+    followers: 0
   };
 
   constructor(
     private router: Router
-  ){}
+  ) { }
 
-  goToUser(user: string): void{
+  goToUser(user: string): void {
+    // localStorage.setItem('user_score', String(this.user.score));
     this.router.navigate([`/user/${user}`])
   }
 }

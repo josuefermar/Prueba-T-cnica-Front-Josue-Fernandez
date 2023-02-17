@@ -14,57 +14,38 @@ export class UserPromisesService {
     private http: HttpClient
   ) { }
 
-  getUserInfo(userName: string): Promise<User>{
+  getUserInfo(userName: string): Promise<User> {
     const promise = new Promise<User>((resolve, reject) => {
-      const apiURL = GlobalVariable.BASE_GIT_INFOUSER_API_URL+userName;
+      const apiURL = GlobalVariable.BASE_GIT_INFOUSER_API_URL + userName;
       this.http.get<User>(apiURL).subscribe({
         next: (res: User) => {
           resolve(res);
-        },
-        error: (err: any) => {
-          Swal.fire({
-            text: "Ocurrio un error al tratar de recopilar la informacion.",
-            icon: 'error',
-          })
         }
       });
     });
     return promise;
   }
 
-  getUserRepos(reposUrl: string): Promise<GitRepo[]>{
+  getUserRepos(reposUrl: string): Promise<GitRepo[]> {
     const promise = new Promise<GitRepo[]>((resolve, reject) => {
-      this.http.get<GitRepo[]>(reposUrl).subscribe({
+      this.http.get<GitRepo[]>(reposUrl, { headers: GlobalVariable.HTTP_GIT_API_HEADERS }).subscribe({
         next: (res: GitRepo[]) => {
           resolve(res);
-        },
-        error: (err: any) => {
-          Swal.fire({
-            text: "Ocurrio un error al tratar de recopilar la informacion.",
-            icon: 'error',
-          })
         }
       })
     })
     return promise;
   }
 
-  getLanguagesrepo(repoUrl: string): Promise<Object>{
+  getLanguagesrepo(repoUrl: string): Promise<Object> {
     const promise = new Promise<Object>((resolve, reject) => {
-      this.http.get<Object>(repoUrl).subscribe({
+      this.http.get<Object>(repoUrl, { headers: GlobalVariable.HTTP_GIT_API_HEADERS }).subscribe({
         next: (res: Object) => {
           resolve(res);
-        },
-        error: (err: any) => {
-          Swal.fire({
-            text: "Ocurrio un error al tratar de recopilar la informacion.",
-            icon: 'error',
-          })
         }
       })
     })
     return promise;
   }
-
 
 }

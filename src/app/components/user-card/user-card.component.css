@@ -80,3 +80,9 @@
         width: 25vw;
     }
 }
+
+@media only screen and (max-width: 1280px) {
+    .card-language {
+        width: 10vw;
+    }
+}

@@ -6,13 +6,14 @@ import { FormComponent } from './components/form/form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserCardListComponent } from './components/user-card-list/user-card-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartScoreComponent } from './components/chart-score/chart-score.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     NgChartsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

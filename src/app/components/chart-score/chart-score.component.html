@@ -1,9 +1,4 @@
 <div class="container" *ngIf="users.length > 0">
-    <canvas baseChart class="chart"
-            [data]="barChartData"
-            [options]="barChartOptions"
-            [type]="barChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)">
+    <canvas baseChart class="chart" [data]="barChartData" [options]="barChartOptions" [type]="barChartType">
     </canvas>
 </div>

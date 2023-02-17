@@ -19,7 +19,8 @@ export class UserCardComponent {
     followers_url: '',
     repos_url: '',
     languages: [],
-    score: 0
+    score: 0,
+    followers: 0
   }
 
   repos: GitRepo[] = []
@@ -28,9 +29,9 @@ export class UserCardComponent {
     private route: ActivatedRoute,
     private userPromisesService: UserPromisesService,
     private userObservablesService: UserObservablesService,
-  ){}
+  ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     let userName = String(this.route.snapshot.paramMap.get('user'))
 
     this.userObservablesService.getUserInfo(userName).subscribe((data: User) => {
@@ -39,7 +40,7 @@ export class UserCardComponent {
     })
   }
 
-  getUserRepos(){
+  getUserRepos() {
     this.userPromisesService.getUserRepos(this.user.repos_url).then((data: GitRepo[]) => {
       this.user.repos = data
       this.repos = data.slice(0, 4)
@@ -47,17 +48,16 @@ export class UserCardComponent {
     })
   }
 
-  getLanguages(){
+  getLanguages() {
     this.user.repos?.forEach(repo => {
-        this.userPromisesService.getLanguagesrepo(repo.languages_url).then((data: Object) => {
-          console.log(data);
-          if(this.user.languages != undefined && this.user.languages != null){
-            this.user.languages = [...this.user.languages, ...(Object.keys(data))]
-            this.user.languages = this.user.languages.filter((value, index, array) => array.indexOf(value) === index)
-          }else{
-            this.user.languages = Object.keys(data);
-          }
-        })
+      this.userPromisesService.getLanguagesrepo(repo.languages_url).then((data: Object) => {
+        if (this.user.languages != undefined && this.user.languages != null) {
+          this.user.languages = [...this.user.languages, ...(Object.keys(data))]
+          this.user.languages = this.user.languages.filter((value, index, array) => array.indexOf(value) === index)
+        } else {
+          this.user.languages = Object.keys(data);
+        }
+      })
     })
-  }  
+  }
 }
