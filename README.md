@@ -19,7 +19,8 @@ npm install
 
 ## Servidor de desarrollo
 
-Para ejecutar el servidor se utiliza el siguiente comando; `ng serve`. Por defecto el link de la aplicacion es `http://localhost:4200/`
+Para ejecutar el servidor se utiliza el siguiente comando: `ng serve`.
+Por defecto el link de la aplicacion es `http://localhost:4200/`
 
 
 <!-- ## Running unit tests
