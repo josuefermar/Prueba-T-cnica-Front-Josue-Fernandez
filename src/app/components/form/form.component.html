@@ -11,7 +11,7 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary button-submit" type="submit">Buscar</button>
+                <button class="btn btn-primary button-submit" type="submit" [disabled]="checkoutForm.get('userName')?.errors">Buscar</button>
             </div>
         </div>
         <p class="alert alert-danger" *ngIf="checkoutForm.controls['userName'].hasError('minlength')">
@@ -22,7 +22,7 @@
             Este campo es obligatorio
         </p>
         <p class="alert alert-danger" *ngIf="checkoutForm.controls['userName'].hasError('pattern')">
-            No se puede realizar la busqueda de "doublevpartners"
+            Por favor ingrese un nombre de usuario valido.
         </p>
     </div>
 </form>

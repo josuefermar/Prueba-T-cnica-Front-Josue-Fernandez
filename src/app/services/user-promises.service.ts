@@ -28,7 +28,7 @@ export class UserPromisesService {
 
   getUserRepos(reposUrl: string): Promise<GitRepo[]> {
     const promise = new Promise<GitRepo[]>((resolve, reject) => {
-      this.http.get<GitRepo[]>(reposUrl, { headers: GlobalVariable.HTTP_GIT_API_HEADERS }).subscribe({
+      this.http.get<GitRepo[]>(reposUrl).subscribe({
         next: (res: GitRepo[]) => {
           resolve(res);
         }
@@ -39,7 +39,7 @@ export class UserPromisesService {
 
   getLanguagesrepo(repoUrl: string): Promise<Object> {
     const promise = new Promise<Object>((resolve, reject) => {
-      this.http.get<Object>(repoUrl, { headers: GlobalVariable.HTTP_GIT_API_HEADERS }).subscribe({
+      this.http.get<Object>(repoUrl).subscribe({
         next: (res: Object) => {
           resolve(res);
         }

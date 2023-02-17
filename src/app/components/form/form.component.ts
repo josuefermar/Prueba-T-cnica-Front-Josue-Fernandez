@@ -16,7 +16,13 @@ export class FormComponent {
   inputFocus = false;
 
   checkoutForm = this.formBuilder.group({
-    userName: [null, [Validators.required, Validators.minLength(4), Validators.pattern('^((?!doublevpartners).)*$')]],
+    userName: [null, [
+      Validators.required, 
+      Validators.minLength(4), 
+      Validators.pattern('^((?!doublevpartners).)*$'),
+      Validators.pattern('^((?!doublevpartner).)*$'),
+      Validators.pattern('^[a-zA-Z0-9]*$')
+    ]],
   });
 
   constructor(

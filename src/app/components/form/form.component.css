@@ -63,6 +63,7 @@ p.alert.alert-danger {
     color: #ff4040;
     font-size: 13px;
     width: 55%;
+    margin-bottom: 0%;
 }
 
 .form-input-box.error {
