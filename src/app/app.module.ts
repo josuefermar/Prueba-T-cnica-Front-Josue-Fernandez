@@ -14,6 +14,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { ChartScoreComponent } from './components/chart-score/chart-score.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
     UserCardListComponent,
     HomeComponent,
     ChartScoreComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

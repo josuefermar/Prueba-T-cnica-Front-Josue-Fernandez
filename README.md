@@ -22,7 +22,9 @@ npm install
 Para ejecutar el servidor se utiliza el siguiente comando: `ng serve`.
 Por defecto el link de la aplicación es `http://localhost:4200/`
 
-<!-- ## Running unit tests
+## Paginas
 
+La aplicacion cuenta con 2 paginas o vistas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io). -->
+- Home - `http://localhost:4200/`
+- User - `http://localhost:4200/user/:user` recibe el username de un usuario

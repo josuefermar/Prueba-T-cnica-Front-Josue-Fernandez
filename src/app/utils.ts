@@ -11,7 +11,7 @@ export default class Utils {
     static showCantAccess() {
         Swal.fire({
             'title': 'Opps!',
-            'html': 'No se puede ver el perfil de aquellos con score inferior a 30.',
+            'html': 'Pagina no encontrada.',
             'icon': 'error'
         })
     }
